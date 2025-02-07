@@ -1,7 +1,15 @@
-{{page-title "SocialVisualization"}}
+{{!-- <h1>Flux de posts en temps réel</h1>
 
-{{outlet}}
+{{#each (array "pin" "instagram_media" "youtube_video" "article" "tweet" "facebook_status") as |type|}}
+  <h2>{{type}} ({{this.model.postsByType}} posts)</h2>
+  <ul>
+    {{#each this.model.postsByType.[type] as |post|}}
+      <li>
+         {{post.timestamp}}   {{post.author}} : {{post.content}}
+      </li>
+    {{/each}}
+  </ul>
+{{/each}} --}}
 
-{{! The following component displays Ember's default welcome message. }}
-<WelcomePage />
-{{! Feel free to remove this! }}
+<PostGraph />
+{{!-- {{PostGraph /}} --}}
