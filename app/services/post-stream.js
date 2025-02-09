@@ -28,13 +28,13 @@ export default class PostStreamService extends Service {
 
       this.addPost(postType, postData);
     };
+    this.isStreaming = true; // Met à jour l'état
 
     this.eventSource.onerror = (error) => {
       console.error('❌ Erreur SSE :', error);
       this.stopListening();
     };
 
-    this.isStreaming = true; // Met à jour l'état
   }
 
   @action

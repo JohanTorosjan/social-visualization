@@ -98,7 +98,7 @@ export default class GraphComponent extends Component {
       .attr('cy', (d) => yScale(+d.split('-')[1]) + yScale.bandwidth() / 2)
       .attr('r', (d) => radiusScale(counts[d]))
       .style('fill', (d) =>
-        counts[d] === maxPosts && maxPosts !== 1 ? '#0f0;' : '#8a2be2',
+        counts[d] === maxPosts && maxPosts !== 1 ? '#0f0' : '#8a2be2',
       ) // 📌 Le plus grand en rouge
       .style('opacity', 0.7)
       .on('mouseover', (event, d) => {
