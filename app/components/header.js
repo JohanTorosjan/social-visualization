@@ -5,20 +5,19 @@ import { tracked } from '@glimmer/tracking';
 
 export default class HeaderComponent extends Component {
   @service postStream; // Service pour récupérer les posts
-  @tracked isStreaming = true; // État du stream
-  
-  get postCount() {
-    return this.postStream.posts.length || 0;
-  }
+  @tracked isStreaming = this.postStream.isStreaming; 
+ 
+ 
+  get postsCount (){
+return this.postStream.getPostCounts()
+
+ }
 
   @action
   toggleStream() {
-    this.isStreaming = !this.isStreaming;
-    if (this.isStreaming) {
-      this.postStream.openConnection();
-    } else {
-      this.postStream.closeConnection();
-    }
+    this.postStream.toggleStreaming();
+    this.isStreaming = this.postStream.isStreaming; 
+
   }
 
   @action

@@ -43,6 +43,7 @@ export default class PostGraphComponent extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     window.removeEventListener('resize', this.updateWindowWidth);
   }
 }

@@ -2,8 +2,17 @@
   
   {{!-- 🔹 Partie gauche : Switch + nombre de posts --}}
   <div class="header-left">
-    <button class="switch-button" {{on "click" this.toggleStream}}>⚡ Switch</button>
-    <span class="post-counter">{{this.postCount}} posts</span>
+    <button       class="{{if (eq true this.isStreaming) "active"}}"
+{{on "click" this.toggleStream}}>
+{{#if this.isStreaming}}
+    LIVE
+
+{{else}}
+  START
+
+{{/if}}
+</button>
+    <span class="post-counter">{{this.postsCount}} posts</span>
   </div>
 
   {{!-- 🔹 Titre stylisé façon Matrix --}}

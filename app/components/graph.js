@@ -73,7 +73,9 @@ export default class GraphComponent extends Component {
       .append('svg')
       .attr('width', width)
       .attr('height', height)
-      .style('background', '#f5f5f5'); // 📌 Ajout d'un fond gris clair
+      .style('background', '#000') // 📌 Ajout d'un fond gris clair
+      .style('color','white');
+      
     const tooltip = d3
       .select(element)
       .append('div')
@@ -96,7 +98,7 @@ export default class GraphComponent extends Component {
       .attr('cy', (d) => yScale(+d.split('-')[1]) + yScale.bandwidth() / 2)
       .attr('r', (d) => radiusScale(counts[d]))
       .style('fill', (d) =>
-        counts[d] === maxPosts && maxPosts !== 1 ? 'red' : 'black',
+        counts[d] === maxPosts && maxPosts !== 1 ? '#0f0;' : '#8a2be2',
       ) // 📌 Le plus grand en rouge
       .style('opacity', 0.7)
       .on('mouseover', (event, d) => {
