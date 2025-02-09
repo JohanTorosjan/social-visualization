@@ -15,6 +15,10 @@ export default class TypeNavigationComponent extends Component {
     return this.types.indexOf(this.activeType);
   }
 
+  get numberOfPosts(){
+    return this.postStream.getPostsByType(this.activeType).length
+  }
+
   labelType(type) {
     return labelMatch[type];
   }

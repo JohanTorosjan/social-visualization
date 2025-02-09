@@ -1,16 +1,4 @@
 <div class="type-navigation">
-      <div class="types-list">
-    {{#each this.types as |type|}}
-      <button
-        type="button"
-                class="{{if (eq type this.activeType) "active"}}"
-
-        {{on "click" (fn this.setActiveType type)}}
-      >
-        {{format-type type}}
-      </button>
-    {{/each}}
-  </div>
   {{!-- Bouton gauche --}}
   <div class="nav-button left">
     <button type="button" {{on "click" this.previousType}}>&lt;</button>
@@ -20,6 +8,7 @@
   <div class="active-type">
     {{format-type this.activeType}}
   </div>
+   <p class="number-of-posts"> {{this.numberOfPosts}} posts</p>
 
   {{!-- Bouton droit --}}
   <div class="nav-button right">
@@ -27,5 +16,21 @@
   </div>
 
   {{!-- Liste des types en bas --}}
-
+    
+    <div class="types-list">
+{{#if this.types}}
+  {{#each this.types as |type|}}
+    <button
+      type="button"
+      class="{{if (eq type this.activeType) "active"}}"
+      {{on "click" (fn this.setActiveType type)}}
+    >
+      {{format-type type}}<br/>
+    </button>
+  {{/each}}
+{{else}}
+  {{!-- Loader circulaire --}}
+  <div class="loader"></div>
+{{/if}}
+  </div>
 </div>

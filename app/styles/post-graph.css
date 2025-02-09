@@ -1,49 +1,57 @@
-/****** ✅ Conteneur principal du graph ******/
+/****** ✅ Conteneur principal ******/
 
 .graph-section {
     display: flex;
-    justify-content: center;
-    padding: 20px;
+    justify-content: center; /* Centre tout horizontalement */
+    align-items: center;
     width: 100%;
+    padding: 20px 0;
+    background-color: #1a1a2e; /* Bleu foncé */
+
   }
   
-  /****** ✅ Conteneur de la navigation + graphe en row ******/
+  /****** ✅ Conteneur qui aligne la navigation et le graphe en colonne ******/
   
   .graph-wrapper {
+    background-color: #16213e; /* Bleu moyen */
+
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    width: 100%;
-    max-width: 1200px;
+    flex-direction: column; /* Met tout en colonne */
+    align-items: center; /* Centre horizontalement */
+    gap: 20px; /* Espacement entre navigation et graphe */
+    width: 80%;
+    border-radius: 20px;
   }
   
   /****** ✅ Barre de navigation ******/
   
   .graph-navigation {
-    width: 250px;
-    background: rgba(22, 33, 62, 0.8); /* Bleu semi-transparent */
-    padding: 15px;
+    width: 100%; /* Largeur max */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
     border-radius: 10px;
-    text-align: center;
   }
   
   /****** ✅ Zone contenant le graphe ******/
   
   .graph-container {
-    width: 900px;
-    height: 500px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    
+    width: 950px;
+    height: 350px;
+    background-color: #16213e; /* Bleu moyen */
+    background: #e94560; /* Orange */
+
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   }
   
-  /****** ✅ Message quand l'écran est trop petit ******/
+  /****** ✅ Message si le graphe ne peut pas s'afficher ******/
   
   .graph-message {
+    opacity: 0.6;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;

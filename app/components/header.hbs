@@ -1,7 +1,19 @@
 <header class="app-header">
-  {{!-- <button type="button" class="switch-button" {{on "click" this.toggleConnection}}>
-    Switch
-  </button>
-   --}}
-  <p class="post-counter">Nombre total de posts : {{this.args.posts.length}}</p>
+  
+  {{!-- 🔹 Partie gauche : Switch + nombre de posts --}}
+  <div class="header-left">
+    <button class="switch-button" {{on "click" this.toggleStream}}>⚡ Switch</button>
+    <span class="post-counter">{{this.postCount}} posts</span>
+  </div>
+
+  {{!-- 🔹 Titre stylisé façon Matrix --}}
+  <div class="header-title">
+    <h1>3-Dimensional Visualization of Social Posts</h1>
+  </div>
+
+  {{!-- 🔹 Bouton "About This Site" à droite --}}
+  <div class="header-right">
+    <button class="about-button" {{on "click" this.navigateToAbout}}>About This Site</button>
+  </div>
+
 </header>

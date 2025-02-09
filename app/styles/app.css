@@ -1,4 +1,21 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
 @import url("type-navigation.css");
-@import url("post-graph.css")
+@import url("post-graph.css");
+@import url("header.css");
+/* 🌍 S'assurer que l'application prend bien tout l'écran */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; /* Permet d'avoir une hauteur minimale */
+  background-color: #1a1a2e; /* Bleu foncé */
+  display: flex;
+  flex-direction: column;
+}
 
+/* 📌 Conteneur principal de l'application */
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
