@@ -4,7 +4,7 @@ import { action } from '@ember/object';
 
 export default class PostStreamService extends Service {
   @tracked postsByType = {}; // Stocke les posts par type
-  @tracked posts = []
+  @tracked posts = [];
   eventSource = null;
 
   constructor() {
@@ -14,7 +14,7 @@ export default class PostStreamService extends Service {
 
   @action
   startListening() {
-    this.eventSource = new EventSource("https://stream.upfluence.co/stream");
+    this.eventSource = new EventSource('https://stream.upfluence.co/stream');
 
     this.eventSource.onmessage = (event) => {
       const newPost = JSON.parse(event.data);
@@ -25,7 +25,7 @@ export default class PostStreamService extends Service {
     };
 
     this.eventSource.onerror = (error) => {
-      console.error("❌ Erreur SSE :", error);
+      console.error('❌ Erreur SSE :', error);
       this.eventSource.close();
     };
   }
@@ -35,16 +35,16 @@ export default class PostStreamService extends Service {
     // Créer une nouvelle référence de l'objet pour forcer la réactivité
     this.postsByType = {
       ...this.postsByType,
-      [type]: [...(this.postsByType[type] || []), postData]
+      [type]: [...(this.postsByType[type] || []), postData],
     };
-    this.posts.push(postData)
+    this.posts.push(postData);
   }
 
   getPostsByType(type) {
     return this?.postsByType[type] || [];
-  } 
+  }
 
-  getAllTypes() { 
+  getAllTypes() {
     return Object.keys(this.postsByType); // Retourne tous les types de posts présents
   }
 }

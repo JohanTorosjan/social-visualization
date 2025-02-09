@@ -8,17 +8,16 @@ export default class PostGraphComponent extends Component {
   @tracked activeType = null;
 
   get posts() {
-    console.log(this.postStream.getPostsByType("tiktok_video"))
+    console.log(this.postStream.getPostsByType('tiktok_video'));
     return this.postStream.posts;
-  } 
-
+  }
 
   get allTypes() {
-    console.log(this.postStream.getAllTypes())
+    console.log(this.postStream.getAllTypes());
     return this.postStream.getAllTypes(); // Liste dynamique des types de posts
   }
   @action
   setActiveGraph(type) {
     this.activeType = type;
   }
-}   
+}

@@ -1,0 +1,28 @@
+<div class="type-navigation">
+  {{!-- Bouton gauche --}}
+  <div class="nav-button left">
+    <button type="button" {{on "click" this.previousType}}>&lt;</button>
+  </div>
+
+  {{!-- Type actif centré --}}
+  <div class="active-type">
+    {{this.activeType}}
+  </div>
+
+  {{!-- Bouton droit --}}
+  <div class="nav-button right">
+    <button type="button" {{on "click" this.nextType}}>&gt;</button>
+  </div>
+
+  {{!-- Liste des types en bas --}}
+  <div class="types-list">
+    {{#each this.types as |type|}}
+      <button
+        type="button"
+        {{on "click" (fn this.setActiveType type)}}
+      >
+        {{type}}
+      </button>
+    {{/each}}
+  </div>
+</div>

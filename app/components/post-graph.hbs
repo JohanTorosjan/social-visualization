@@ -3,16 +3,13 @@
 <h2>Post Graph</h2>
 <p>Nombre total de posts : {{this.posts.length}}</p>
 
-<!-- 📌 Boutons de navigation -->
 <div class="graph-navigation">
-  {{#each this.allTypes as |type|}}
-    <button {{on "click" (fn this.setActiveGraph type)}}>
-      {{type}}
-    </button>
-  {{/each}}
+
+<TypeNavigation @type={{this.activeType}} 
+@allTypes={{this.allTypes}}
+@onTypeChange={{this.setActiveGraph}} />
 </div>
 
-<!-- 📌 Affichage du graphe actif -->
 {{#if this.activeType}}
   <h3>Type : {{this.activeType}}</h3>
   <Graph @type={{this.activeType}} />
