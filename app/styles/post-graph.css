@@ -1,0 +1,55 @@
+/****** ✅ Conteneur principal du graph ******/
+
+.graph-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  /****** ✅ Conteneur de la navigation + graphe en row ******/
+  
+  .graph-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /****** ✅ Barre de navigation ******/
+  
+  .graph-navigation {
+    width: 250px;
+    background: rgba(22, 33, 62, 0.8); /* Bleu semi-transparent */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /****** ✅ Zone contenant le graphe ******/
+  
+  .graph-container {
+    width: 900px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /****** ✅ Message quand l'écran est trop petit ******/
+  
+  .graph-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    background: #E94560; /* Rouge vif */
+  }
+  

@@ -1,16 +1,25 @@
+{{!-- Header avec le switch et le compteur --}}
+<Header @posts={{this.posts.length}} />
 
+<div class="graph-section">
 
-<h2>Post Graph</h2>
-<p>Nombre total de posts : {{this.posts.length}}</p>
+  <div class="graph-wrapper">
+    
+    {{!-- Barre de navigation des types --}}
+    <div class="graph-navigation">
+      <TypeNavigation @type={{this.activeType}} 
+                      @allTypes={{this.allTypes}}
+                      @onTypeChange={{this.setActiveGraph}} />
+    </div>
 
-<div class="graph-navigation">
+    {{!-- Fond du graphe + gestion du message si non affichable --}}
+    <div class="graph-container">
+      {{#if (gt this.windowWidth 900)}}
+          <Graph @type={{this.activeType}} />
+      {{else}}
+        <h1 class="graph-message">Sorry, your screen is too small to display this graph</h1>
+      {{/if}}
+    </div>
 
-<TypeNavigation @type={{this.activeType}} 
-@allTypes={{this.allTypes}}
-@onTypeChange={{this.setActiveGraph}} />
+  </div>
 </div>
-
-{{#if this.activeType}}
-  <h3>Type : {{this.activeType}}</h3>
-  <Graph @type={{this.activeType}} />
-{{/if}}

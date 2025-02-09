@@ -47,4 +47,8 @@ export default class PostStreamService extends Service {
   getAllTypes() {
     return Object.keys(this.postsByType); // Retourne tous les types de posts présents
   }
+
+  closeConnection() {
+    this.eventSource.close();
+  }
 }

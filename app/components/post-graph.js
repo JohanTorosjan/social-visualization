@@ -5,8 +5,9 @@ import { action } from '@ember/object';
 
 export default class PostGraphComponent extends Component {
   @service postStream; // Injection du service
-  @tracked activeType = null;
+  @tracked activeType = 'tiktok_video';
 
+  @tracked windowWidth = window.innerWidth; // Suivi de la largeur d'écran
   get posts() {
     console.log(this.postStream.getPostsByType('tiktok_video'));
     return this.postStream.posts;
@@ -19,5 +20,29 @@ export default class PostGraphComponent extends Component {
   @action
   setActiveGraph(type) {
     this.activeType = type;
+  }
+
+  @action
+  toggleConnection() {
+    this.connectionOpen = !this.connectionOpen;
+    if (this.connectionOpen) {
+      this.postStream.openConnection();
+    } else {
+      this.postStream.closeConnection();
+    }
+  }
+
+  @action
+  updateWindowWidth() {
+    this.windowWidth = window.innerWidth;
+  }
+
+  constructor() {
+    super(...arguments);
+    window.addEventListener('resize', this.updateWindowWidth);
+  }
+
+  willDestroy() {
+    window.removeEventListener('resize', this.updateWindowWidth);
   }
 }

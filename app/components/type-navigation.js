@@ -4,17 +4,19 @@ import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 
 export default class TypeNavigationComponent extends Component {
-  @tracked activeType = this.args.type ||  'tiktok_video'; // Type actif
+  @tracked activeType = this.args.type || 'tiktok_video'; // Type actif
   @service postStream; // Injection du service
 
-  get types(){
-    
+  get types() {
     return this.postStream.getAllTypes();
-  }  
+  }
   // Trouve l'index du type actif
   get currentIndex() {
-    
     return this.types.indexOf(this.activeType);
+  }
+
+  labelType(type) {
+    return labelMatch[type];
   }
 
   @action
