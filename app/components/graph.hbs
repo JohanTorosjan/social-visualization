@@ -1,2 +1,5 @@
-<div {{this.drawGraph}}></div>
-
+{{#if (eq @size "s")}}
+  <div {{this.drawSmallGraph}}></div>
+{{else}}
+  <div {{this.drawGraph}}></div>
+{{/if}}

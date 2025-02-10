@@ -7,7 +7,7 @@ export default class PostStreamService extends Service {
   @tracked posts = [];
   @tracked isStreaming = false; // Indique si le stream est actif
   eventSource = null;
-  @tracked numberOfPosts = 0
+  @tracked numberOfPosts = 0;
   @tracked newPost = false;
 
   constructor() {
@@ -15,8 +15,7 @@ export default class PostStreamService extends Service {
     this.startListening(); // Lancer automatiquement le stream au démarrage
   }
 
-
-  get postsAsDate(){
+  get postsAsDate() {
     return this.posts.map((post) => {
       const date = new Date(post.timestamp * 1000); // Convertir le timestamp en date
       return {
@@ -24,15 +23,13 @@ export default class PostStreamService extends Service {
         hour: date.getUTCHours(), // 0 - 23 (heure UTC)
       };
     });
-    
   }
-
 
   @action
   startListening() {
     if (this.eventSource) return; // Empêche de démarrer plusieurs connexions
 
-    console.log("🔵 Démarrage du stream...");
+    console.log('🔵 Démarrage du stream...');
     this.newPost = false;
     this.eventSource = new EventSource('https://stream.upfluence.co/stream');
 
@@ -49,13 +46,12 @@ export default class PostStreamService extends Service {
       console.error('❌ Erreur SSE :', error);
       this.stopListening();
     };
-
   }
 
   @action
   stopListening() {
     if (this.eventSource) {
-      console.log("🔴 Arrêt du stream...");
+      console.log('🔴 Arrêt du stream...');
       this.eventSource.close();
       this.eventSource = null;
       this.isStreaming = false; // Met à jour l'état
@@ -77,14 +73,13 @@ export default class PostStreamService extends Service {
       ...this.postsByType,
       [type]: [...(this.postsByType[type] || []), postData],
     };
-    this.posts.push({...postData,type});
-    this.numberOfPosts+=1;
-    this.newPost=true
+    this.posts.push({ ...postData, type });
+    this.numberOfPosts += 1;
+    this.newPost = true;
   }
 
-
-  getPostCounts(){
-    return this.numberOfPosts
+  getPostCounts() {
+    return this.numberOfPosts;
   }
 
   getPostsByType(type) {
@@ -95,11 +90,9 @@ export default class PostStreamService extends Service {
     return Object.keys(this.postsByType);
   }
 
-  lastFourPosts(){
-    if(this.newPost){
+  lastFourPosts() {
+    if (this.newPost) {
       return this.posts?.slice(-4).reverse();
     }
   }
-
-
 }

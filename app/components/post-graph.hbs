@@ -1,5 +1,4 @@
 {{!-- Header avec le switch et le compteur --}}
-    <Header />
 <div class="graph-section">
   
   <div class="graph-wrapper">
@@ -9,14 +8,16 @@
                       @onTypeChange={{this.setActiveGraph}} />
     </div>
     <div class="graph-container">
-      {{#if (gt this.windowWidth 950)}}
+      {{#if (gt this.windowWidth 910)}}
        
           <Graph @type={{this.activeType}}
-          @setHotSpot={{this.setHotSpot}}
+          @size="l"
          />
 
       {{else}}
-        <p class="graph-message">Sorry, your screen is to small to display the graph</p>
+                <Graph @type={{this.activeType}}
+                @size="s"
+         />
       {{/if}}
     </div>
 

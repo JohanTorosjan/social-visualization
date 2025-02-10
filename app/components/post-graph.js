@@ -9,7 +9,6 @@ export default class PostGraphComponent extends Component {
 
   @tracked windowWidth = window.innerWidth; // Suivi de la largeur d'écran
 
-
   get allTypes() {
     console.log(this.postStream.getAllTypes());
     return this.postStream.getAllTypes(); // Liste dynamique des types de posts
@@ -20,10 +19,9 @@ export default class PostGraphComponent extends Component {
     this.activeType = type;
   }
 
-
   @action
-  setHotSpot(){
-    debugger
+  setHotSpot() {
+    debugger;
   }
 
   @action

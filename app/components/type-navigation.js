@@ -7,19 +7,20 @@ export default class TypeNavigationComponent extends Component {
   @tracked activeType = this.args.type; // Type actif
   @service postStream; // Injection du service
 
-    get types() {
-        return this.postStream.getAllTypes();
-    }
+  get types() {
+    return this.postStream.getAllTypes();
+  }
   // Trouve l'index du type actif
   get currentIndex() {
     return this.types.indexOf(this.activeType);
   }
 
   get numberOfPosts() {
-    const numberOfPosts = this.postStream.getPostsByType(this.activeType).length
-    return `${numberOfPosts}\n${numberOfPosts===1?"post":"posts"}`;
+    const numberOfPosts = this.postStream.getPostsByType(
+      this.activeType,
+    ).length;
+    return `${numberOfPosts}\n${numberOfPosts === 1 ? 'post' : 'posts'}`;
   }
-
 
   @action
   setActiveType(type) {
@@ -41,7 +42,7 @@ export default class TypeNavigationComponent extends Component {
   }
 
   @action
-  initType(){
-    this.setActiveType(this.types[0])
+  initType() {
+    this.setActiveType(this.types[0]);
   }
 }

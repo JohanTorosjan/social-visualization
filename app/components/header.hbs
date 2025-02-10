@@ -1,6 +1,6 @@
 <header class="app-header">
   <div class="header-left">
-    <button class="{{if (eq true this.isStreaming) "active"}}" {{on "click" this.toggleStream}}>
+    <button class="{{if (eq true this.isStreaming) "active"}}" type="button" {{on "click" this.toggleStream}}>
       {{#if this.isStreaming}}
         {{this.postsCount}} posts
       {{else}}

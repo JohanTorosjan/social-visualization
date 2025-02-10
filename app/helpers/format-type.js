@@ -16,5 +16,5 @@ function capitalizeFirstLetter(string) {
 }
 
 export default helper(function formatType([type]) {
-  return labelMatch[type] || capitalizeFirstLetter(type) || '' ;
+  return labelMatch[type] || capitalizeFirstLetter(type) || '';
 });
