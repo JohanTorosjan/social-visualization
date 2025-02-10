@@ -1,28 +1,23 @@
 <header class="app-header">
-  
-  {{!-- 🔹 Partie gauche : Switch + nombre de posts --}}
   <div class="header-left">
-    <button       class="{{if (eq true this.isStreaming) "active"}}"
-{{on "click" this.toggleStream}}>
-{{#if this.isStreaming}}
-    LIVE
-
-{{else}}
-  START
-
-{{/if}}
-</button>
-    <span class="post-counter">{{this.postsCount}} posts</span>
+    <button class="{{if (eq true this.isStreaming) "active"}}" {{on "click" this.toggleStream}}>
+      {{#if this.isStreaming}}
+        {{this.postsCount}} posts
+      {{else}}
+        START
+      {{/if}}
+    </button>
   </div>
 
-  {{!-- 🔹 Titre stylisé façon Matrix --}}
-  <div class="header-title">
+  <div class="header-center">
     <h1>3-Dimensional Visualization of Social Posts</h1>
   </div>
 
-  {{!-- 🔹 Bouton "About This Site" à droite --}}
   <div class="header-right">
-    <button class="about-button" {{on "click" this.navigateToAbout}}>About This Site</button>
+    <div class="last-posts">
+      {{#each this.lastsPostsDisplay as |post|}}
+        <p class="post-item">{{post}}</p>
+      {{/each}}
+    </div>
   </div>
-
 </header>

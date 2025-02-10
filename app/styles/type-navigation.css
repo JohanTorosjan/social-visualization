@@ -1,89 +1,35 @@
+
 .type-navigation {
-  padding-top: 100px;
-  padding-bottom: 50px;
   width: 100%;
-  height: 70px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   background-color: #000;
   border-radius: 10px;
-}
-
-.nav-button {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 60%;
-  transform: translateY(-50%);
-}
-
-.nav-button.left {
-  left: 10%; /* Décale légèrement depuis le bord gauche */
-}
-
-.nav-button.right {
-  right: 10%;
-}
-
-.nav-button button {
-  width: 80%;
-  height: 80%;
-  font-size: 2rem;
-  border: none;
-  background:#8a2be2; /* Bleu clair */
-    color:white;
-  cursor: pointer;
-  border-radius: 50px;
-  transition: font-size 0.3s ease;
-  box-shadow: 0 0 10px #0f0;
-
-}
-
-.nav-button button:hover {
-  font-size: 2.5rem;
-}
-
-.active-type {
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  line-height: 100px;
-  flex-grow: 1;
-
-  color: #0f0;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-shadow: 0 0 10px #0f0;
 
 
 }
 
-.number-of-posts {
-  font-size: 1.5rem;
-  background-color:#8a2be2;
-  padding: 10px;
-  color: white;
-}
+
+
 
 .types-list {
-  position: absolute;
-  top: 0;
+
   width: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  height: 50px;
+  
+  height: auto;
   display: flex;
-  justify-content: center;
+ justify-content: center;
   align-items: center;
   gap: 10px;
   background-color: #000;
   border-radius: 10px;
-    box-shadow: 0 0 10px #8a2be2;
+  flex-wrap: wrap; /* Permet le retour à la ligne */
+  max-width: 90vw; /* Évite de dépasser l'écran */
+  overflow-y: auto; /* Ajoute un scroll si besoin */
+  padding: 10px; /* Un peu de padding pour l'esthétique */
 
 }
 
@@ -103,7 +49,7 @@
 .types-list button.active {
   background: #0f0;
 
-  color: #8a2be2;
+  color: black;
   font-weight: bold;
   
 }
@@ -128,4 +74,76 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* Conteneur principal */
+.type-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Première ligne avec les boutons */
+.types-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Deuxième ligne (click-selection) avec trois colonnes */
+.click-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Colonne 1 : Bouton gauche */
+.nav-button.left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Colonne 2 : Centre */
+.center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Colonne 3 : Bouton droit */
+.nav-button.right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Boutons */
+button {
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: #0f0;;
+
+    cursor: pointer;
+    background-color: #000;
+
+        user-select: none;
+    
+    border: none;
+}
+
+button.active {
+    box-shadow: 0 0 10px #0f0;
+}
+
+/* Type info */
+.type-info,.start-button {
+font-size: 1.3em;    
+color: #0f0;
+font-weight: bold;
+text-align: center;
+white-space: pre-line; /* Permet d'afficher \n */
+
 }

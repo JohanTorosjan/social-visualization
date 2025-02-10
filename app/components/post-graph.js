@@ -5,21 +5,25 @@ import { action } from '@ember/object';
 
 export default class PostGraphComponent extends Component {
   @service postStream; // Injection du service
-  @tracked activeType = 'tiktok_video';
+  @tracked activeType = 'loader';
 
   @tracked windowWidth = window.innerWidth; // Suivi de la largeur d'écran
-  get posts() {
-    console.log(this.postStream.getPostsByType('tiktok_video'));
-    return this.postStream.posts;
-  }
+
 
   get allTypes() {
     console.log(this.postStream.getAllTypes());
     return this.postStream.getAllTypes(); // Liste dynamique des types de posts
   }
+
   @action
   setActiveGraph(type) {
     this.activeType = type;
+  }
+
+
+  @action
+  setHotSpot(){
+    debugger
   }
 
   @action
@@ -39,6 +43,7 @@ export default class PostGraphComponent extends Component {
 
   constructor() {
     super(...arguments);
+
     window.addEventListener('resize', this.updateWindowWidth);
   }
 

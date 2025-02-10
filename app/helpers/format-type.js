@@ -12,9 +12,9 @@ const labelMatch = {
 };
 
 function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  return string?.charAt(0).toUpperCase() + string.slice(1);
 }
 
 export default helper(function formatType([type]) {
-  return labelMatch[type] || capitalizeFirstLetter(type);
+  return labelMatch[type] || capitalizeFirstLetter(type) || '' ;
 });
