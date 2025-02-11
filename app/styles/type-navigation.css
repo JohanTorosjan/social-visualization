@@ -35,14 +35,28 @@
   transition:
     background 0.3s ease,
     color 0.3s ease;
+    .type-count {
+        font-size:0.7rem;
+    }
 }
 
-.types-list button.active {
-  background: #0f0;
-  color: black;
-  font-weight: bold;
-  font-size: 1.5em;
-}
+
+
+.types-list button.popped {
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 0 10px #0f0;
+
+  }
+
+  .types-list button.active {
+    background: #0f0;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+
+  }
+  
 
 /* Loader circulaire */
 .loader {

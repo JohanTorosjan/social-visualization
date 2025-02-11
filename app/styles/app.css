@@ -34,23 +34,9 @@ html, body {
     width: 100%;
 }
 
-/* 📊 Zone centrale qui pousse le footer vers le bas */
-.post-graph {
-    flex-grow: 1; /* Remplit l’espace disponible */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: #f4f4f4;
-    width: 100%;
+
+.post-graph{
+    height: calc(100vh - 120px);
+overflow: auto;
 }
 
-/* 📌 Footer TOUJOURS collé en bas */
-.footer {
-
-    background-color: #000;
-
-    padding: 15px 0;
-    flex-shrink: 0; /* Évite que le footer soit écrasé */
-    width: 100%;
-}

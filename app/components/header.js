@@ -12,7 +12,6 @@ export default class HeaderComponent extends Component {
 
   get lastsPostsDisplay() {
     const lastFour = this.postStream.lastFourPosts();
-    console.log('📢 Derniers posts:', lastFour);
     if (!lastFour || lastFour.length === 0) {
       return ['loading ...']; // Si aucun post, affiche un message
     } // Debug pour voir les posts dans la console

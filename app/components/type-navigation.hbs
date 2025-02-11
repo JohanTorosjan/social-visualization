@@ -6,10 +6,11 @@
   {{#each this.types as |type|}}
     <button
       type="button"
-      class="{{if (eq type this.activeType) "active"}}"
+      class="{{if (eq type.name this.activeType.name) "active"}} {{if (eq type.name this.lastPostType) "popped"}}"
       {{on "click" (fn this.setActiveType type)}}
     >
-      {{format-type type}}<br/>
+      {{format-type type.name}}<br/> <p class="type-count">({{type.count}}) </p>
+
     </button>
   {{/each}}
 {{else}}
@@ -27,13 +28,13 @@
   </div>
 <div class="center">
   {{#if this.types}}
-    {{#if (eq this.activeType 'loader')}}
+    {{#if (eq this.activeType.name 'loader')}}
       <div class="start-button" {{on "click" this.initType}}>
         Start
       </div>
     {{else}}
       <div class="type-info">
-        {{format-type this.activeType}}<br/>{{this.numberOfPosts}}
+        {{format-type this.activeType.name}}<br/>{{this.numberOfPosts}}
       </div>
     {{/if}}
   {{else}}

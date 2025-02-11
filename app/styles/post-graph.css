@@ -7,7 +7,7 @@
   width: 100%;
   padding: 20px 0;
   background-color: #000;
-  height: 100%;
+  height: fit-content;
 }
 
 /****** ✅ Conteneur qui aligne la navigation et le graphe en colonne ******/
@@ -20,6 +20,8 @@
   gap: 20px; /* Espacement entre navigation et graphe */
   width: 80%;
   border-radius: 20px;
+  height: auto;
+
 }
 
 /****** ✅ Barre de navigation ******/

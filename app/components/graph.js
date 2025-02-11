@@ -29,8 +29,8 @@ export default class GraphComponent extends Component {
 
   drawSmallGraph = modifier((element) => {
     const data = this.processedData;
-    const width = 200;
-    const height = 600;
+    const width = 300;
+    const height =400;
 
     const xScale = d3
       .scaleBand()

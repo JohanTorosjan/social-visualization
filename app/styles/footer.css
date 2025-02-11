@@ -3,7 +3,10 @@
     background-color: #000;
     color: #00ff41;
     box-shadow: 0 0 10px #0f0;
-
+    height: 120px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
 
   .footer-content {
@@ -51,3 +54,4 @@
     text-decoration: none;
     color: rgba(0, 255, 65, 0.9);; /* Bleu clair */
   }
+  

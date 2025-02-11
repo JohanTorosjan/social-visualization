@@ -29,7 +29,6 @@ export default class PostStreamService extends Service {
   startListening() {
     if (this.eventSource) return; // Empêche de démarrer plusieurs connexions
 
-    console.log('🔵 Démarrage du stream...');
     this.newPost = false;
     this.eventSource = new EventSource('https://stream.upfluence.co/stream');
 
@@ -51,7 +50,6 @@ export default class PostStreamService extends Service {
   @action
   stopListening() {
     if (this.eventSource) {
-      console.log('🔴 Arrêt du stream...');
       this.eventSource.close();
       this.eventSource = null;
       this.isStreaming = false; // Met à jour l'état
@@ -95,4 +93,10 @@ export default class PostStreamService extends Service {
       return this.posts?.slice(-4).reverse();
     }
   }
-}
+
+  lastPost(){
+    if (this.newPost) {
+      return this.posts[this.posts.length-1]
+    }
+  }
+} 

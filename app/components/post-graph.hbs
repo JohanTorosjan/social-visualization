@@ -3,9 +3,10 @@
   
   <div class="graph-wrapper">
     <div class="graph-navigation">
-      <TypeNavigation @type={{this.activeType}} 
-                      @allTypes={{this.allTypes}}
-                      @onTypeChange={{this.setActiveGraph}} />
+      <TypeNavigation @activeType={{this.activeType}} 
+                   
+                      @onTypeChange={{this.setActiveGraph}} 
+                      />
     </div>
     <div class="graph-container">
       {{#if (gt this.windowWidth 910)}}
