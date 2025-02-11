@@ -2,9 +2,9 @@
     <div class="header-left">
         <button class="{{if (eq true this.isStreaming) " active"}}" type="button" {{on "click" this.toggleStream}}>
             {{#if this.isStreaming}}
-            Total: {{this.postsCount}}
+            TOTAL: {{this.postsCount}}
             {{else}}
-            START
+            START   
             {{/if}}
         </button>
     </div>

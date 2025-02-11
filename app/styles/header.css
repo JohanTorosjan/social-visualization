@@ -8,7 +8,7 @@
   border-bottom: 2px solid #0f0;
   text-transform: uppercase;
   box-shadow: 0 0 10px #0f0;
-  max-height: 200px;
+  max-height: 120px;
 }
 
 .post-item {
@@ -16,11 +16,10 @@
 }
 
 .last-posts {
-  font-size: 0.7em;
+  font-size: 0.5em;
   width: fit-content;
   max-height: 30%;
   margin: 0;
-  flex-shrink: 1;
   min-width: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -46,10 +45,10 @@
   cursor: pointer;
   border-radius: 5px;
   transition: 0.3s;
+  font-size: 0.5em;
 }
 
 .header-left button.active {
-  padding: 10px 15px;
   background: #0f0;
   color: #000;
   font-weight: bold;
@@ -63,12 +62,9 @@
   background: #090;
 }
 
-.post-counter {
-  font-size: 1.2rem;
-}
 
-.header-title h1 {
-  font-size: 1.5rem;
+.header-center h1 {
+  font-size: 1.3em !important;
   font-weight: bold;
   text-align: center;
   letter-spacing: 2px;
