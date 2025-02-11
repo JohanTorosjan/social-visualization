@@ -6,6 +6,12 @@ import constants from 'social-visualization/utils/constants';
 const formatedHour = (hour) => {
   const period = hour >= 12 ? 'PM' : 'AM';
   const formatted = hour % 12 || 12;
+  return `${formatted} ${hour%12===0?period:''}`;
+};
+
+const formatedHourTooltip = (hour) => {
+  const period = hour >= 12 ? 'PM' : 'AM';
+  const formatted = hour % 12 || 12;
   return `${formatted} ${period}`;
 };
 
@@ -91,7 +97,7 @@ export default class D3GraphModifier extends Modifier {
         tooltip
           .html(
             `
-      <strong>${constants.weekDays[day]} ${formatedHour(hour)}<br></strong>
+      <strong>${constants.weekDays[day]} ${formatedHourTooltip(hour)}<br></strong>
       <strong>${counts[d]} ${counts[d] === 1 ? 'post' : 'posts'}</strong>
     `,
           )
