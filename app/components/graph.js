@@ -105,7 +105,21 @@ export default class GraphComponent extends Component {
       })
       .on('mouseleave', () => {
         tooltip.style('opacity', 0);
-      });
+      })
+      .on('click', (event, d) => {
+        const [day, hour] = d.split('-').map(Number);
+        tooltip.style('opacity', 1);
+        tooltip
+          .html(
+            `
+          <strong>${weekDays[day]}
+        ${formatedHour(hour)}<br></strong>
+          <strong>${counts[d]} ${counts[d] === 1 ? 'post' : 'posts'}</strong> 
+        `,
+          )
+          .style('left', event.pageX + 10 + 'px')
+          .style('top', event.pageY - 20 + 'px');
+      })
 
     const xAxis = d3.axisBottom(xScale).tickFormat((d) => weekDays[d]);
 

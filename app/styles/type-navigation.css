@@ -20,7 +20,6 @@
   border-radius: 10px;
   flex-wrap: wrap; /* Permet le retour à la ligne */
   max-width: 90vw; /* Évite de dépasser l'écran */
-  overflow-y: auto; /* Ajoute un scroll si besoin */
   padding: 10px; /* Un peu de padding pour l'esthétique */
 }
 
