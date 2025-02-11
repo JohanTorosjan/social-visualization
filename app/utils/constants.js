@@ -7,10 +7,10 @@ export default {
     },
 
     M: {
-        width: 600,
-        height: 600,
-      },
-      
+      width: 600,
+      height: 600,
+    },
+
     L: {
       width: 900,
       height: 300,

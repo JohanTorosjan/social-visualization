@@ -1,4 +1,3 @@
-
 .graph-section {
   display: flex;
   justify-content: center;
@@ -14,7 +13,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px; 
+  gap: 20px;
   width: 80%;
   border-radius: 20px;
   height: auto;
@@ -23,7 +22,7 @@
 .graph-navigation {
   width: 100%;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   border-radius: 10px;
 }
 

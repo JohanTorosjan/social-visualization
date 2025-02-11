@@ -1,122 +1,121 @@
 .type-navigation {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    background-color: #000;
-    border-radius: 10px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: #000;
+  border-radius: 10px;
 }
 
 .types-list {
-    width: auto;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background-color: #000;
-    border-radius: 10px;
-    flex-wrap: wrap;
-    max-width: 90vw;
-    padding: 10px;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #000;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  max-width: 90vw;
+  padding: 10px;
 }
 
 .types-list button {
-    padding: 8px 12px;
-    font-size: 1rem;
-    border: none;
-    background: #8a2be2;
-    color: #000;
-    cursor: pointer;
-    border-radius: 10px;
-    transition:
-        background 0.3s ease,
-        color 0.3s ease;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: none;
+  background: #8a2be2;
+  color: #000;
+  cursor: pointer;
+  border-radius: 10px;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .types-list button.popped {
-    font-weight: bold;
-    font-size: 1rem;
-    box-shadow: 0 0 10px #0f0;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 0 10px #0f0;
 }
 
 .types-list button.active {
-    background: #0f0;
-    color: black;
-    font-weight: bold;
-    font-size: 1.5rem;
+  background: #0f0;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-
-
-    /* LOADER */
+/* LOADER */
 
 .loader {
-    border: 4px solid rgb(255 255 255 / 30%);
-    border-top: 4px solid #8a2be2;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    margin: auto;
+  border: 4px solid rgb(255 255 255 / 30%);
+  border-top: 4px solid #8a2be2;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: auto;
 }
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
 
-    100% {
-        transform: rotate(360deg);
-    }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .click-selection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .nav-button.left {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .center {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-button.right {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 button {
-    border-radius: 20px;
-    padding: 10px 15px;
-    color: #0f0;
-    cursor: pointer;
-    background-color: #000;
-    user-select: none;
-    border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  color: #0f0;
+  cursor: pointer;
+  background-color: #000;
+  user-select: none;
+  border: none;
 }
 
 button.active {
-    box-shadow: 0 0 10px #0f0;
+  box-shadow: 0 0 10px #0f0;
 }
 
 .type-info,
 .start-button {
-    font-size: 1.3em;
-    color: #0f0;
-    font-weight: bold;
-    text-align: center;
-    white-space: pre-line;
+  font-size: 1.3em;
+  color: #0f0;
+  font-weight: bold;
+  text-align: center;
+  white-space: pre-line;
 }

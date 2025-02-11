@@ -5,7 +5,7 @@ import constants from 'social-visualization/utils/constants';
 export default class GraphComponent extends Component {
   @service postStream;
 
-  // Here we just filter the posts by type and return them as day and hour 
+  // Here we just filter the posts by type and return them as day and hour
   get processedData() {
     return this.postStream.getPostsByType(this.args.type).map((post) => {
       const date = new Date(post.timestamp * 1000);
@@ -16,7 +16,7 @@ export default class GraphComponent extends Component {
     });
   }
 
-  //Width and Height 
+  //Width and Height
   get width() {
     return constants.graphSizes[this.args.size].width;
   }

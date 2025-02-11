@@ -28,7 +28,7 @@ export default class PostGraphComponent extends Component {
     this.windowWidth = window.innerWidth;
   }
 
-  //We track the window size 
+  //We track the window size
   constructor() {
     super(...arguments);
     window.addEventListener('resize', this.updateWindowWidth);

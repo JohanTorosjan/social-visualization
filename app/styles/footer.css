@@ -33,7 +33,7 @@
 }
 
 .footer-nav a:hover {
-  color: #0c3; 
+  color: #0c3;
   text-shadow: 0 0 10px rgb(0 255 65 / 90%);
 }
 
@@ -45,5 +45,5 @@
 
 a {
   text-decoration: none;
-  color: rgb(0 255 65 / 90%); 
+  color: rgb(0 255 65 / 90%);
 }

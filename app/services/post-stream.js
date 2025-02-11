@@ -34,7 +34,7 @@ export default class PostStreamService extends Service {
 
     this.eventSource.onerror = (error) => {
       this.stopListening();
-      console.log(error)
+      console.log(error);
     };
   }
 
