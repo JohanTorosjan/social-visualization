@@ -19,11 +19,8 @@
     background-color: #000;
     border-radius: 10px;
     flex-wrap: wrap;
-    /* Permet le retour à la ligne */
     max-width: 90vw;
-    /* Évite de dépasser l'écran */
     padding: 10px;
-    /* Un peu de padding pour l'esthétique */
 }
 
 .types-list button {
@@ -31,9 +28,7 @@
     font-size: 1rem;
     border: none;
     background: #8a2be2;
-    /* Bleu clair */
     color: #000;
-    /* Gris clair */
     cursor: pointer;
     border-radius: 10px;
     transition:
@@ -54,20 +49,19 @@
     font-size: 1.5rem;
 }
 
-/* Loader circulaire */
+
+
+    /* LOADER */
+
 .loader {
     border: 4px solid rgb(255 255 255 / 30%);
-    /* Bordure semi-transparente */
     border-top: 4px solid #8a2be2;
-    /* Rouge vif */
     border-radius: 50%;
     width: 40px;
     height: 40px;
     animation: spin 1s linear infinite;
     margin: auto;
 }
-
-/* Animation du spinner */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -78,20 +72,6 @@
     }
 }
 
-/* Conteneur principal */
-.type-navigation {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Première ligne avec les boutons */
-.types-list {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-/* Deuxième ligne (click-selection) avec trois colonnes */
 .click-selection {
     display: flex;
     justify-content: center;
@@ -99,14 +79,12 @@
     gap: 20px;
 }
 
-/* Colonne 1 : Bouton gauche */
 .nav-button.left {
     flex: 1;
     display: flex;
     justify-content: flex-start;
 }
 
-/* Colonne 2 : Centre */
 .center {
     flex: 2;
     display: flex;

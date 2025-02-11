@@ -1,8 +1,7 @@
-/****** ✅ Conteneur principal ******/
 
 .graph-section {
   display: flex;
-  justify-content: center; /* Centre tout horizontalement */
+  justify-content: center;
   align-items: center;
   width: 100%;
   padding: 20px 0;
@@ -10,29 +9,23 @@
   height: fit-content;
 }
 
-/****** ✅ Conteneur qui aligne la navigation et le graphe en colonne ******/
-
 .graph-wrapper {
   background-color: #000;
   display: flex;
-  flex-direction: column; /* Met tout en colonne */
-  align-items: center; /* Centre horizontalement */
-  gap: 20px; /* Espacement entre navigation et graphe */
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; 
   width: 80%;
   border-radius: 20px;
   height: auto;
 }
 
-/****** ✅ Barre de navigation ******/
-
 .graph-navigation {
-  width: 100%; /* Largeur max */
+  width: 100%;
   display: flex;
-  justify-content: center; /* Centre horizontalement */
+  justify-content: center; 
   border-radius: 10px;
 }
-
-/****** ✅ Zone contenant le graphe ******/
 
 .graph-container {
   width: fit-content;
@@ -44,8 +37,6 @@
   border-radius: 10px;
   box-shadow: 0 0 10px #0f0;
 }
-
-/****** ✅ Message si le graphe ne peut pas s'afficher ******/
 
 .graph-message {
   opacity: 0.6;

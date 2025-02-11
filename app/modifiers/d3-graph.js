@@ -6,7 +6,7 @@ import constants from 'social-visualization/utils/constants';
 const formatedHour = (hour) => {
     const period = hour >= 12 ? 'PM' : 'AM';
     const formatted = hour % 12 || 12;
-    return `${formatted} ${hour % 12 === 0 ? period : ''}`;
+    return `${formatted} ${period}`;
 };
 
 const margin = { top: 20, right: 20, bottom: 40, left: 40 };

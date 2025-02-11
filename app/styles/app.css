@@ -24,14 +24,6 @@ body {
   height: 100%;
 }
 
-.header {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  flex: 0 0 80px; /* Hauteur fixe */
-  width: 100%;
-}
 
 .post-graph {
   height: 100%;
