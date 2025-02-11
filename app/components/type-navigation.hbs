@@ -1,52 +1,42 @@
 <div class="type-navigation">
 
-    
     <div class="types-list">
-{{#if this.types}}
-  {{#each this.types as |type|}}
-    <button
-      type="button"
-      class="{{if (eq type.name this.activeType.name) "active"}} {{if (eq type.name this.lastPostType) "popped"}}"
-      {{on "click" (fn this.setActiveType type)}}
-    >
-      {{format-type type.name}}<br/> <p class="type-count">({{type.count}}) </p>
+        {{#if this.types}}
+        {{#each this.types as |type|}}
+        <button type="button" class="{{if (eq type.name this.activeType.name) " active"}} {{if (eq type.name
+            this.lastPostType) "popped" }}" {{on "click" (fn this.setActiveType type)}}>
+            {{format-type type.name}} ({{type.count}})
+        </button>
+        {{/each}}
+        {{else}}
 
-    </button>
-  {{/each}}
-{{else}}
-
-{{/if}}
-  </div>
-
-<div class="wrapper">
-
-
-<div class="click-selection">
-  {{!-- Bouton gauche --}}
-  <div class="nav-button left">
-    <button type="button" {{on "click" this.previousType}}>&lt;</button>
-  </div>
-<div class="center">
-  {{#if this.types}}
-    {{#if (eq this.activeType.name 'loader')}}
-      <div class="start-button" {{on "click" this.initType}}>
-        Start
-      </div>
-    {{else}}
-      <div class="type-info">
-        {{format-type this.activeType.name}}<br/>{{this.numberOfPosts}}
-      </div>
-    {{/if}}
-  {{else}}
-    <div class="loader"></div>
-  {{/if}}
-</div>
-  {{!-- Bouton droit --}}
-  <div class="nav-button right">
-    <button type="button" {{on "click" this.nextType}}>&gt;</button>
-  </div>
-</div>
-</div>
+        {{/if}}
+    </div>
+    <div class="wrapper">
+        <div class="click-selection">
+            <div class="nav-button left">
+                <button type="button" {{on "click" this.previousType}}>&lt;</button>
+            </div>
+            <div class="center">
+                {{#if this.types}}
+                {{#if (eq this.activeType.name 'loader')}}
+                <div class="type-info" {{on "click" this.initType}}>
+                    Start
+                </div>
+                {{else}}
+                <div class="type-info">
+                    {{format-type this.activeType.name}}<br /> {{this.numberOfPosts}}
+                </div>
+                {{/if}}
+                {{else}}
+                <div class="loader"></div>
+                {{/if}}
+            </div>
+            <div class="nav-button right">
+                <button type="button" {{on "click" this.nextType}}>&gt;</button>
+            </div>
+        </div>
+    </div>
 
 
 </div>

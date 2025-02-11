@@ -1,23 +1,23 @@
 <header class="app-header">
-  <div class="header-left">
-    <button class="{{if (eq true this.isStreaming) "active"}}" type="button" {{on "click" this.toggleStream}}>
-      {{#if this.isStreaming}}
-        {{this.postsCount}} posts
-      {{else}}
-        START
-      {{/if}}
-    </button>
-  </div>
-
-  <div class="header-center">
-    <h1>3-Dimensional Visualization of Social Posts</h1>
-  </div>
-
-  <div class="header-right">
-    <div class="last-posts">
-      {{#each this.lastsPostsDisplay as |post|}}
-        <p class="post-item">{{post}}</p>
-      {{/each}}
+    <div class="header-left">
+        <button class="{{if (eq true this.isStreaming) " active"}}" type="button" {{on "click" this.toggleStream}}>
+            {{#if this.isStreaming}}
+            Total: {{this.postsCount}}
+            {{else}}
+            START
+            {{/if}}
+        </button>
     </div>
-  </div>
+
+    <div class="header-center">
+        <h1>3-Dimensional Visualization of Social Posts</h1>
+    </div>
+
+    <div class="header-right">
+        <div class="last-posts">
+            {{#each this.lastsPostsDisplay as |post|}}
+            <p class="post-item">{{post}}</p>
+            {{/each}}
+        </div>
+    </div>
 </header>

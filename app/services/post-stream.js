@@ -3,47 +3,38 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 export default class PostStreamService extends Service {
-  @tracked postsByType = {}; // Stocke les posts par type
+  @tracked postsByType = {};
   @tracked posts = [];
-  @tracked isStreaming = false; // Indique si le stream est actif
-  eventSource = null;
+  @tracked isStreaming = false;
   @tracked numberOfPosts = 0;
   @tracked newPost = false;
 
+  eventSource = null;
+
   constructor() {
     super();
-    this.startListening(); // Lancer automatiquement le stream au démarrage
-  }
-
-  get postsAsDate() {
-    return this.posts.map((post) => {
-      const date = new Date(post.timestamp * 1000); // Convertir le timestamp en date
-      return {
-        day: date.getUTCDay(), // 0 = Dimanche, 6 = Samedi
-        hour: date.getUTCHours(), // 0 - 23 (heure UTC)
-      };
-    });
+    this.startListening();
   }
 
   @action
   startListening() {
-    if (this.eventSource) return; // Empêche de démarrer plusieurs connexions
+    if (this.eventSource) return;
 
     this.newPost = false;
     this.eventSource = new EventSource('https://stream.upfluence.co/stream');
 
     this.eventSource.onmessage = (event) => {
       const newPost = JSON.parse(event.data);
-      const postType = Object.keys(newPost)[0]; // Ex: "twitch_stream"
+      const postType = Object.keys(newPost)[0];
       const postData = newPost[postType];
 
       this.addPost(postType, postData);
     };
-    this.isStreaming = true; // Met à jour l'état
+    this.isStreaming = true;
 
     this.eventSource.onerror = (error) => {
-      console.error('❌ Erreur SSE :', error);
       this.stopListening();
+      console.log(error)
     };
   }
 
@@ -52,7 +43,7 @@ export default class PostStreamService extends Service {
     if (this.eventSource) {
       this.eventSource.close();
       this.eventSource = null;
-      this.isStreaming = false; // Met à jour l'état
+      this.isStreaming = false;
     }
   }
 
@@ -94,9 +85,9 @@ export default class PostStreamService extends Service {
     }
   }
 
-  lastPost(){
+  lastPost() {
     if (this.newPost) {
-      return this.posts[this.posts.length-1]
+      return this.posts[this.posts.length - 1];
     }
   }
-} 
+}

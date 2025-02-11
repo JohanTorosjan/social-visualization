@@ -1,27 +1,10 @@
-{{!-- Header avec le switch et le compteur --}}
 <div class="graph-section">
-  
   <div class="graph-wrapper">
     <div class="graph-navigation">
-      <TypeNavigation @activeType={{this.activeType}} 
-                   
-                      @onTypeChange={{this.setActiveGraph}} 
-                      />
+      <TypeNavigation @activeType={{this.activeType}} @onTypeChange={{this.setActiveGraph}} />
     </div>
     <div class="graph-container">
-      {{#if (gt this.windowWidth 910)}}
-       
-          <Graph @type={{this.activeType}}
-          @size="l"
-         />
-
-      {{else}}
-                <Graph @type={{this.activeType}}
-                @size="s"
-         />
-      {{/if}}
+      <Graph @type={{this.activeType}} @size={{graph-size this.windowWidth}} />
     </div>
-
   </div>
-
 </div>

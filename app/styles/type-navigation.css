@@ -1,149 +1,144 @@
 .type-navigation {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  background-color: #000;
-  border-radius: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: #000;
+    border-radius: 10px;
 }
 
 .types-list {
-  width: auto;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  background-color: #000;
-  border-radius: 10px;
-  flex-wrap: wrap; /* Permet le retour à la ligne */
-  max-width: 90vw; /* Évite de dépasser l'écran */
-  padding: 10px; /* Un peu de padding pour l'esthétique */
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #000;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    /* Permet le retour à la ligne */
+    max-width: 90vw;
+    /* Évite de dépasser l'écran */
+    padding: 10px;
+    /* Un peu de padding pour l'esthétique */
 }
 
 .types-list button {
-  padding: 8px 12px;
-  font-size: 1rem;
-  border: none;
-  background: #8a2be2; /* Bleu clair */
-  color: #000;; /* Gris clair */
-  cursor: pointer;
-  border-radius: 10px;
-  transition:
-    background 0.3s ease,
-    color 0.3s ease;
-    .type-count {
-        font-size:0.7rem;
-    }
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: none;
+    background: #8a2be2;
+    /* Bleu clair */
+    color: #000;
+    /* Gris clair */
+    cursor: pointer;
+    border-radius: 10px;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
-
-
 
 .types-list button.popped {
     font-weight: bold;
     font-size: 1rem;
     box-shadow: 0 0 10px #0f0;
+}
 
-  }
-
-  .types-list button.active {
+.types-list button.active {
     background: #0f0;
     color: black;
     font-weight: bold;
     font-size: 1.5rem;
-
-  }
-  
+}
 
 /* Loader circulaire */
 .loader {
-  border: 4px solid rgb(255 255 255 / 30%); /* Bordure semi-transparente */
-  border-top: 4px solid #8a2be2; /* Rouge vif */
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-  margin: auto;
+    border: 4px solid rgb(255 255 255 / 30%);
+    /* Bordure semi-transparente */
+    border-top: 4px solid #8a2be2;
+    /* Rouge vif */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: auto;
 }
 
 /* Animation du spinner */
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
 
-  100% {
-    transform: rotate(360deg);
-  }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Conteneur principal */
 .type-navigation {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Première ligne avec les boutons */
 .types-list {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 /* Deuxième ligne (click-selection) avec trois colonnes */
 .click-selection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 /* Colonne 1 : Bouton gauche */
 .nav-button.left {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
 }
 
 /* Colonne 2 : Centre */
 .center {
-  flex: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Colonne 3 : Bouton droit */
 .nav-button.right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
-/* Boutons */
 button {
-  border-radius: 20px;
-  padding: 10px 15px;
-  color: #0f0;
-  cursor: pointer;
-  background-color: #000;
-  user-select: none;
-  border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: #0f0;
+    cursor: pointer;
+    background-color: #000;
+    user-select: none;
+    border: none;
 }
 
 button.active {
-  box-shadow: 0 0 10px #0f0;
+    box-shadow: 0 0 10px #0f0;
 }
 
-/* Type info */
 .type-info,
 .start-button {
-  font-size: 1.3em;
-  color: #0f0;
-  font-weight: bold;
-  text-align: center;
-  white-space: pre-line; /* Permet d'afficher \n */
+    font-size: 1.3em;
+    color: #0f0;
+    font-weight: bold;
+    text-align: center;
+    white-space: pre-line;
 }

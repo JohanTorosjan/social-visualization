@@ -1,5 +1,1 @@
-{{#if (eq @size "s")}}
-  <div {{this.drawSmallGraph}}></div>
-{{else}}
-  <div {{this.drawGraph}}></div>
-{{/if}}
+<div {{d3-graph this.processedData this.width this.height }}></div>

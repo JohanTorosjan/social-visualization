@@ -3,41 +3,37 @@
 @import url("post-graph.css");
 @import url("footer.css");
 @import url("header.css");
-/* Assurer que la page prend toute la hauteur */
-/* 🌍 S'assurer que l'application prend bien tout l'écran */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #000;
-    font-family: "Courier New", monospace;
-    overflow: hidden;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  font-family: "Courier New", monospace;
+  overflow: hidden;
 }
 
-/* 📌 Conteneur principal : remplit tout l'écran */
 .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Force le contenu à occuper l'écran entier */
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
 }
 
-/* 🎯 Header fixé en haut */
 .header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    flex: 0 0 80px; /* Hauteur fixe */
-    width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  flex: 0 0 80px; /* Hauteur fixe */
+  width: 100%;
 }
 
-
-.post-graph{
-    height: 100%;
-overflow: auto;
+.post-graph {
+  height: 100%;
+  overflow: auto;
 }
-
